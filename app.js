@@ -3,7 +3,8 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const config = require("./token.json");
 const prefix = config.prefix;
-
+require('dotenv').config();
+var token = process.env.TOKEN;
 
 
 bot.on('message', message => {
@@ -111,4 +112,4 @@ bot.on('ready', () => {
 });
 
 // Bot login
-bot.login(config.token);
+bot.login(process.env.TOKEN);
